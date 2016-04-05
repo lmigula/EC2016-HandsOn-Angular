@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="simpleApp">
+
+  <head>
+    <title>EntwicklerCamp 2016 HandsOn AngularJS</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+
+  </head>
+
+  <body class="container">
+    <h1>EntwicklerCamp 2016</h1>
+    <div ng-controller="firstController as first">
+      <p>
+        {{first.values.key}}
+      </p>
+      <p>
+        {{::first.values.key}}
+      </p>
+      <div ng-controller="secondController as second">
+        {{key}}
+        <input ng-model="first.values.key">
+      <p>
+        {{second.values.key}}
+      </p>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="js/lib/angular.js"></script>
+  <script type="text/javascript" src="js/simpleApp.js"></script>
+</body>
+
+</html>

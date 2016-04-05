@@ -1,0 +1,9 @@
+.speaker, .item p.speaker {
+  color: #df091d;
+  width: 100%;
+}
+
+
+.listItem .btn {
+    display: initial;
+  }
