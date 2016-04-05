@@ -1,1 +1,12 @@
 <h2>Alle Sessions</h2>
+
+
+<div ng-repeat="session in sessionList  track by session.id" type="item-text-wrap" class="listItem">
+
+  <h2>{{session.doc.name}}
+    -
+    {{session.doc.track}}S{{session.doc.session}}</h2>
+  <p class="speaker">{{session.doc.speaker}}</p>
+   <p>{{session.doc.session | timeFilter}}</p>
+  <a class="btn btn-default btn-sm" role="button" ng-href="#/session/{{session.id}}">Detail</a>
+</div>

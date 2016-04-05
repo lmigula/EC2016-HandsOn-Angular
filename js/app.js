@@ -30,4 +30,37 @@ angular.module('ecApp', [
       redirectTo: '/list'
     });
   }])
-  ;
+  .filter('timeFilter', function() {
+    return function(input) {
+      switch (input) {
+        case 1:
+          return "11.03.2016 14:00 - 15:30"
+          break;
+        case 2:
+          return "11.03.2016 16:00 - 17:30"
+          break;
+        case 3:
+          return "12.03.2016 09:00 - 10:30"
+          break;
+        case 4:
+          return "12.03.2016 11:00 - 12:30"
+          break;
+        case 5:
+          return "12.03.2016 14:00 - 15:30"
+          break;
+        case 6:
+          return "12.03.2016 16:00 - 17:30"
+          break;
+        case 7:
+          return "13.03.2016 09:00 - 10:30"
+          break;
+        case 8:
+          return "13.03.2016 11:00 - 12:30"
+          break;
+        default:
+
+      }
+
+
+    }
+  });
