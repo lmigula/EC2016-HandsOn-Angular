@@ -1,5 +1,17 @@
 <p>Favoriten</p>
 
 <div id="render_me">
-
+  <div ng-repeat="session in favList   | orderBy : ['doc.session','doc.track'] track by session.id" type="item-text-wrap">
+     <div class="col-md-10">
+     <b>{{session.doc.name}}
+       -
+       {{session.doc.track}}S{{session.doc.session}}</b>
+     <p class="speaker">{{session.doc.speaker}}</p>
+     <p>{{session.doc.session | timeFilter}}</p>
+     <p ng-bind-html="session.doc.text"></p>
+   </div>
+      <div class="col-md-2 del">
+      <span class="glyphicon glyphicon-trash" ng-click="unbookmark(session.id)"></span>
+      </div>
+   </div>
 </div>

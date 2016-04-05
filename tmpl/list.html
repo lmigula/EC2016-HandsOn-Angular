@@ -1,8 +1,8 @@
 <h2>Alle Sessions</h2>
 
 
-<div ng-repeat="session in sessionList  track by session.id" type="item-text-wrap" class="listItem">
-
+<div ng-repeat="session in sessionList |  orderBy : ['doc.session','doc.track'] track by session.id" type="item-text-wrap" class="listItem">
+  
   <h2>{{session.doc.name}}
     -
     {{session.doc.track}}S{{session.doc.session}}</h2>

@@ -2,3 +2,6 @@
 <div ng-bind-html="session.doc.text"></div>
 <p class="speaker">{{session.doc.speaker }}</p>
 <p>{{session.doc.session | timeFilter}}</p>
+
+  <button type="button" class="btn btn-info" ng-if="!isBookmark()" ng-click="bookmark()">Merken</button>
+  <button type="button" class="btn btn-warning" ng-if="isBookmark()" ng-click="unbookmark()">Nicht Merken</button>

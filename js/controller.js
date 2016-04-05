@@ -9,6 +9,28 @@ angular.module('ecApp.controllers', [])
   .controller('FavoriteController', ['$scope', 'Sessions', function($scope, Sessions) {
     var bookmarkString;
     var bookmarks;
+    var updateData = function() {
+  bookmarkString = localStorage.bookmarks;
+  if (bookmarkString) {
+    bookmarks = bookmarkString.split(',')
+  }
+  var favList = Sessions.getFavs(bookmarks);
+  $scope.favList = favList;
+}
+
+  updateData();
+    $scope.unbookmark = function(id) {
+    if (bookmarks) {
+      var idx = bookmarks.indexOf(id);
+      if (idx >= 0) {
+        bookmarks.splice(idx, 1);
+      }
+      localStorage.bookmarks = bookmarks;
+      updateData();
+    }
+
+  }
+
 
 
   }])
@@ -22,14 +44,31 @@ angular.module('ecApp.controllers', [])
       bookmarks = bookmarkString.split(',')
     }
     $scope.bookmark = function() {
-
+      if (!bookmarks) {
+        bookmarks = new Array();
+      }
+      if (bookmarks.indexOf(id) < 0) {
+        bookmarks.push(id)
+      }
+      localStorage.bookmarks = bookmarks;
     }
     $scope.unbookmark = function() {
-
+      if (!bookmarks) {
+        bookmarks = new Array();
+      }
+      var idx = bookmarks.indexOf(id);
+      if (idx >= 0) {
+        bookmarks.splice(idx, 1);
+      }
+      localStorage.bookmarks = bookmarks;
     }
 
     $scope.isBookmark = function() {
-
+      var result = false
+      if (bookmarks) {
+        result = bookmarks.indexOf(id) >= 0;
+      }
+      return result;
     }
   }])
   .controller('InfoController', ['$scope', function($scope) {
