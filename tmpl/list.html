@@ -1,7 +1,8 @@
 <h2>Alle Sessions</h2>
+<label>Filter:
+  <input ng-model="searchText"></label>
 
-
-<div ng-repeat="session in sessionList |  orderBy : ['doc.session','doc.track'] track by session.id" type="item-text-wrap" class="listItem">
+<div ng-repeat="session in sessionList | filter:searchText | orderBy : ['doc.session','doc.track'] track by session.id" type="item-text-wrap" class="listItem">
 
   <h4>{{session.doc.name}}
     -
