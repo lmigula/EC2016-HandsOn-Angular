@@ -1,4 +1,4 @@
-<p>Favoriten</p>
+<h2>Favoriten</h2>
 
 <div id="render_me">
   <div ng-repeat="session in favList   | orderBy : ['doc.session','doc.track'] track by session.id" type="item-text-wrap">
@@ -14,4 +14,8 @@
       <span class="glyphicon glyphicon-trash" ng-click="unbookmark(session.id)"></span>
       </div>
    </div>
+</div>
+
+<div class="col-md-12">
+  <button type="button" class="btn btn-info" ng-click="getPdf()">pdf</button>
 </div>

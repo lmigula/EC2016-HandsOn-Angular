@@ -12,3 +12,10 @@
   color:red;
   font-size: 25px;
 }
+
+.listItem{
+  padding-bottom: 25px;
+}
+#render_me .col-md-10{
+  padding-left:0px;
+}

@@ -2,11 +2,13 @@
 
 
 <div ng-repeat="session in sessionList |  orderBy : ['doc.session','doc.track'] track by session.id" type="item-text-wrap" class="listItem">
-  
-  <h2>{{session.doc.name}}
+
+  <h4>{{session.doc.name}}
     -
-    {{session.doc.track}}S{{session.doc.session}}</h2>
+    {{session.doc.track}}S{{session.doc.session}}</h4>
   <p class="speaker">{{session.doc.speaker}}</p>
    <p>{{session.doc.session | timeFilter}}</p>
-  <a class="btn btn-default btn-sm" role="button" ng-href="#/session/{{session.id}}">Detail</a>
+  <a type="button" class="btn btn-info" ng-href="#/session/{{session.id}}">
+  <span class="glyphicon glyphicon-info-sign"></span>
+    Detail</a>
 </div>

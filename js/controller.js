@@ -16,7 +16,7 @@ angular.module('ecApp.controllers', [])
   }
   var favList = Sessions.getFavs(bookmarks);
   $scope.favList = favList;
-}
+};
 
   updateData();
     $scope.unbookmark = function(id) {
@@ -29,7 +29,23 @@ angular.module('ecApp.controllers', [])
       updateData();
     }
 
-  }
+  };
+
+  $scope.getPdf = function() {
+     console.log("start");
+     var specialElementHandlers = {
+       '#editor': function(element, renderer) {
+         return true;
+       }
+     };
+     var doc = new jsPDF();
+
+     doc.fromHTML($('#render_me').get(0), 15, 15, {
+       'width': 170,
+       'elementHandlers': specialElementHandlers
+     });
+     doc.save('favs.pdf');
+   };
 
 
 

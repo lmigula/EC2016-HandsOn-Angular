@@ -1,3 +1,6 @@
 ## Entwicklercamp 2016 Angular Hands-On
 
-Quellcode der fertigen App
+Quellcode für das Hands-on 8 beim EntwicklerCamp 2016.
+
+[http://www.entwicklercamp.de/](http://www.entwicklercamp.de/ "")
+
