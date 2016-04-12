@@ -11,6 +11,24 @@
 
   <body class="container">
     <h1>EntwicklerCamp 2016</h1>
+    <div ng-controller="simpleController">
+      <p>
+        {{values}}
+      </p>
+      <p>
+        {{::values}}
+      </p>
+      <div ng-controller="secondSimpleController">
+        {{key}}
+        <input ng-model="values">
+      <p>
+        {{values}}
+      </p>
+    </div>
+    
+    
+    <h2>controllerAs</h2>
+    
     <div ng-controller="firstController as first">
       <p>
         {{first.values.key}}
